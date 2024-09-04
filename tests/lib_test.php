@@ -24,7 +24,7 @@ require_once($CFG->dirroot . '/local/greetings/lib.php');
  * Greetings library tests
  *
  * @package     local_greetings
- * @copyright   2022 Your name <your@email>
+ * @copyright   2024 Ali Ayub Kalufya <kalufya@gmail.com>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class lib_test extends \advanced_testcase {
@@ -52,23 +52,23 @@ class lib_test extends \advanced_testcase {
      *
      * @return array List of data sets - (string) data set name => (array) data
      */
-    public function local_greetings_get_greeting_provider() {
+    public function local_greetings_get_greeting_provider(): array {
         return [
             'No user' => [
                 'country' => null,
-                'langstring' => 'greetinguser'
+                'langstring' => 'greetinguser',
             ],
             'AU user' => [
                 'country' => 'AU',
-                'langstring' => 'greetinguserau'
+                'langstring' => 'greetinguserau',
             ],
             'ES user' => [
                 'country' => 'ES',
-                'langstring' => 'greetinguseres'
+                'langstring' => 'greetinguseres',
             ],
             'VU user' => [
                 'country' => 'VU',
-                'langstring' => 'greetingloggedinuser'
+                'langstring' => 'greetingloggedinuser',
             ],
         ];
     }

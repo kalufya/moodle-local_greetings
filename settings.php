@@ -15,6 +15,8 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * This are settings
+ * @package local_greetings
  * @copyright  2022 Rajneel Totatam
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */

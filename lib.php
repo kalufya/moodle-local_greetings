@@ -18,7 +18,7 @@
  * Library of functions for local_greetings
  *
  * @package     local_greetings
- * @copyright   2022 Your name <your@email>
+ * @copyright   2024 Ali Ayub Kalufya <kalufya@gmail.com>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -28,19 +28,19 @@ defined('MOODLE_INTERNAL') || die();
  * Insert a link to index.php on the site front page navigation menu.
  *
  * @param navigation_node $frontpage Node representing the front page in the navigation tree.
+ * @throws coding_exception
+ * @throws dml_exception
  */
-function local_greetings_extend_navigation_frontpage(navigation_node $frontpage) {
-    if (get_config('local_greetings', 'showinnavigation')) {
-        if (isloggedin() && !isguestuser()) {
-            $frontpage->add(
-                get_string('pluginname', 'local_greetings'),
-                new moodle_url('/local/greetings/index.php'),
-                navigation_node::TYPE_CUSTOM,
-                null,
-                null,
-                new pix_icon('t/message', '')
-            );
-        }
+function local_greetings_extend_navigation_frontpage(navigation_node $frontpage): void {
+    if (get_config('local_greetings', 'showinnavigation') && isloggedin() && !isguestuser()) {
+        $frontpage->add(
+            get_string('pluginname', 'local_greetings'),
+            new moodle_url('/local/greetings/index.php'),
+            navigation_node::TYPE_CUSTOM,
+            null,
+            null,
+            new pix_icon('t/message', '')
+        );
     }
 }
 
@@ -48,8 +48,10 @@ function local_greetings_extend_navigation_frontpage(navigation_node $frontpage)
  * Add link to index.php into navigation drawer.
  *
  * @param global_navigation $root Node representing the global navigation tree.
+ * @throws coding_exception
+ * @throws dml_exception
  */
-function local_greetings_extend_navigation(global_navigation $root) {
+function local_greetings_extend_navigation(global_navigation $root): void {
     if (isloggedin() && !isguestuser()) {
         $node = navigation_node::create(
             get_string('pluginname', 'local_greetings'),
@@ -72,8 +74,9 @@ function local_greetings_extend_navigation(global_navigation $root) {
  *
  * @param \stdClass $user
  * @return string
+ * @throws coding_exception
  */
-function local_greetings_get_greeting($user) {
+function local_greetings_get_greeting($user): string {
     if ($user == null) {
         return get_string('greetinguser', 'local_greetings');
     }

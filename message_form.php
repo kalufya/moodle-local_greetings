@@ -15,7 +15,9 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * @copyright  2022 Your name <your@email>
+ * The Form
+ * @package local_greetings
+ * @copyright  2024 Ali Ayub Kalufya <kalufya@gmail.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -23,6 +25,9 @@ defined('MOODLE_INTERNAL') || die();
 
 require_once($CFG->libdir . '/formslib.php');
 
+/**
+ * Message Form class
+ */
 class local_greetings_message_form extends moodleform {
     /**
      * Define the form.

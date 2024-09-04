@@ -15,6 +15,9 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Library for local_greetings
+ *
+ * @package local_greetings
  * @copyright  2022 Rajneel Totatam
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -28,21 +31,21 @@ $capabilities = array(
         'contextlevel' => CONTEXT_SYSTEM,
         'archetypes' => array(
             'user' => CAP_ALLOW,
-        )
+        ),
     ),
     'local/greetings:viewmessages' => array(
         'captype' => 'read',
         'contextlevel' => CONTEXT_SYSTEM,
         'archetypes' => array(
             'user' => CAP_ALLOW,
-        )
+        ),
     ),
     'local/greetings:deleteownmessage' => array(
         'captype' => 'write',
         'contextlevel' => CONTEXT_SYSTEM,
         'archetypes' => array(
             'user' => CAP_ALLOW,
-        )
+        ),
     ),
     'local/greetings:deleteanymessage' => array(
         'riskbitmask' => RISK_DATALOSS,
@@ -50,6 +53,6 @@ $capabilities = array(
         'contextlevel' => CONTEXT_SYSTEM,
         'archetypes' => array(
             'manager' => CAP_ALLOW,
-        )
+        ),
     ),
 );
